@@ -1,0 +1,24 @@
+#header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#main-title {
+  font-family: "Montserrat";
+  font-weight: 700;
+  font-size: 36px;
+  margin: 12px 0;
+  background: linear-gradient(174.92deg, #EF6C00 18.47%, #DB6300 36.57%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.horizontal-line {
+  width: 255px;
+  height: 1px;
+  background-color: #CFCFCF;
+}

@@ -13,12 +13,6 @@ module.exports = {
     clean: true
   },
   mode: "production",
-  devServer: {
-    static: {
-      directory: distPath,
-    },
-    port: 9000,
-  },
   resolve: {
     extensions: ['.jsx', '.js'],
   },

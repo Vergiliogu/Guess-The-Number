@@ -1,5 +1,6 @@
 const path = require("path")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const Dotenv = require('dotenv-webpack')
 
 const distPath = path.resolve(__dirname, "dist")
@@ -8,10 +9,10 @@ module.exports = {
   entry: "./src/index.jsx",
   output: {
     path: distPath,
-    filename: "bundle.js",
+    filename: "bundle.[contenthash].js",
     clean: true
   },
-  mode: "development",
+  mode: "production",
   devServer: {
     static: {
       directory: distPath,
@@ -20,10 +21,6 @@ module.exports = {
   },
   resolve: {
     extensions: ['.jsx', '.js'],
-    alias: {
-      "@jsxConverter": path.resolve(__dirname, "src/jsxConverter.js"),
-      "@images": path.resolve(__dirname, "src/assets/images/")
-    }
   },
   module: {
     rules: [
@@ -32,12 +29,6 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
-          options: {
-            "presets": ["@babel/preset-env"],
-            "plugins": [
-              ["@babel/plugin-transform-react-jsx", { "pragma": "createElement", "pragmaFrag": "createFragment" }]
-            ]
-          }
         }
       },
       {
@@ -54,7 +45,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"]
+        use: [MiniCssExtractPlugin.loader, "css-loader"]
       },
       {
         test: /\.tff$/,
@@ -71,7 +62,10 @@ module.exports = {
     new Dotenv(),
     new HtmlWebpackPlugin({
       filename: "index.html",
-      title: "Counter"
+      title: "Game"
+    }),
+    new MiniCssExtractPlugin({
+      filename: "styles.[contenthash].css"
     })
   ]
 }

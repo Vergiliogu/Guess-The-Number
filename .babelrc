@@ -1,0 +1,23 @@
+{
+  "presets": [
+    "@babel/preset-env"
+  ],
+  "plugins": [
+    [
+      "@babel/plugin-transform-react-jsx",
+      {
+        "pragma": "createElement",
+        "pragmaFrag": "createFragment"
+      }
+    ],
+    [
+      "module-resolver",
+      {
+        "alias": {
+          "@jsxConverter": "./src/jsxConverter.js",
+          "@images": "./src/assets/images/"
+        }
+      }
+    ]
+  ]
+}

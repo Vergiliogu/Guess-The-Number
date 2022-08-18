@@ -1,5 +1,6 @@
 const path = require("path")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
+const Dotenv = require('dotenv-webpack')
 
 const distPath = path.resolve(__dirname, "dist")
 
@@ -15,17 +16,13 @@ module.exports = {
     static: {
       directory: distPath,
     },
-    compress: true,
     port: 9000,
-    devMiddleware: {
-      writeToDisk: false
-    }
   },
   resolve: {
     extensions: ['.jsx', '.js'],
     alias: {
-      JsxConverter: path.resolve(__dirname, "src/jsxConverter"),
-      "@images": path.resolve(__dirname, "src/assets/images")
+      "@jsxConverter": path.resolve(__dirname, "src/jsxConverter.js"),
+      "@images": path.resolve(__dirname, "src/assets/images/")
     }
   },
   module: {
@@ -71,6 +68,7 @@ module.exports = {
     ]
   },
   plugins: [
+    new Dotenv(),
     new HtmlWebpackPlugin({
       filename: "index.html",
       title: "Counter"

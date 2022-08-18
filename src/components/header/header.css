@@ -1,15 +1,17 @@
 #header {
   width: 100%;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   flex-direction: column;
+  margin-top: 44px;
 }
 
 #main-title {
   font-family: "Montserrat";
   font-weight: 700;
   font-size: 36px;
-  margin: 12px 0;
+  margin-bottom: 16px;
   background: linear-gradient(174.92deg, #EF6C00 18.47%, #DB6300 36.57%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -21,4 +23,19 @@
   width: 255px;
   height: 1px;
   background-color: #CFCFCF;
+}
+
+@media only screen and (max-width: 550px) {
+  #header {
+    margin-top: 62px;    
+  }
+
+  #main-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .horizontal-line {
+    width: 205px;
+  }
 }

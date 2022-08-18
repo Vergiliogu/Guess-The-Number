@@ -1,4 +1,4 @@
-import { createElement, createFragment } from "JsxConverter"
+import { createElement, createFragment } from "@jsxConverter"
 import "./header.css"
 
 const Header = (props) => {

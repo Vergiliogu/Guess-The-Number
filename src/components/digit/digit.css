@@ -6,6 +6,14 @@
   margin: 0 5.5px;
 }
 
+/* 
+  Filtros utilizados para tornar possível a mudança de cores das imagens SVG, assim
+  mantendo o programa otimizado e com o tamnho reduzido.
+
+  Os filtros podem ser envontrados simplesmente procurando por ferramentas online que 
+  consigam converter um código HEX de cor em filtros Css.
+*/
+
 .red-filter {
   filter: invert(25%) sepia(79%) saturate(6714%) hue-rotate(23deg) brightness(97%) contrast(100%);
 }
@@ -89,4 +97,27 @@
   bottom: 2.09px;
   transform: rotateY(180deg);
   transform: rotateZ(180deg);
+}
+
+@media only screen and (max-width: 550px) {
+  .digit {
+    width: 56px;
+    margin: 0 4.5px;
+  }
+
+  .vertical-part {
+    height: 46px;
+  }
+
+  .horizontal-part {
+    width: 50px;
+  }
+
+  .center-part-digit {
+    width: 45px;
+  }
+
+  .parts-block-digit {
+    height: 47px;
+  }
 }

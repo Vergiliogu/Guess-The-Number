@@ -6,9 +6,11 @@
   height: 42px;
 }
 
-.guess-input {
+#guess-input {
   width: 217px;
-  border: 1px solid #FF6600;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #CFCFCF;
   padding: 12px 14px;
   box-sizing: border-box;
   border-radius: 4px;
@@ -16,20 +18,25 @@
   font-family: 'Roboto';
   font-size: 12px;
   font-weight: 400;
+  outline: none;
 }
 
-.guess-btn {
+#guess-input:focus {
+  border-color: #FF6600;
+}
+
+#guess-button {
   width: 70px;
   height: 42px;
   background: linear-gradient(180deg, #EF6C00 0%, #C0661C 100%);
-  border: none;
-  border-radius: 4px;
-  color: white;
-  font-family: 'Roboto';
-  font-weight: 700;
-  font-size: 12px;
 }
 
-.guess-btn:active {
+#guess-button:active {
   opacity: 0.8;
+}
+
+@media only screen and (max-width: 550px) {
+  #guess-container {
+    margin-top: 73px;
+  }
 }

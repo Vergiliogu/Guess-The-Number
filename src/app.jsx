@@ -1,4 +1,4 @@
-import { createElement, createFragment } from "JsxConverter"
+import { createElement, createFragment } from "@jsxConverter"
 import Home from "./views/home"
 
 const App = (props) => {
